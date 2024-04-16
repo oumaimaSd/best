@@ -1,0 +1,152 @@
+main {
+    padding: 0px;
+  }
+  /* ajout-membre.component.css */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+  }
+  
+  button1 {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    background-color: #ccc;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button {
+    display: block;
+    width: 10%;
+    padding: 10px;
+    background-color: #eee;
+    color: #8a0303;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0057b32b;
+  }
+  /* ajout-membre.component.css */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Pour centrer les cartes horizontalement */
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+
+    .card {
+        width: calc(33.33% - 20px); /* Calculer la largeur de chaque carte pour qu'il y ait trois cartes par ligne */
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+.card-img-top {
+    width: 100%; /* Définir la largeur de l'image à 100% de la largeur de la carte */
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.card-body {
+    padding: 20px;
+}
+
+  /* sails.component.css */
+  img {
+  
+  
+    max-width: 100%; /* Limite la largeur de l'image à 100% de son conteneur */
+    max-height: 1500px; /* Limite la hauteur de l'image à 300 pixels */
+    /* Ajoutez d'autres styles si nécessaire */
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .card-text {
+    color: #666;
+  }
+  /* ajout-membre.component.css */
+  .teamwares-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    width: 10000px;
+    margin-left: 400px;
+    margin-bottom: 100px;
+  }
+  
+  .teamware-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    background-color: #eee;
+  }
+  
+  .teamware-info {
+    margin-bottom: 10px;
+  }
+  
+  .teamware-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .small-button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  main {
+    padding: 0px;
+  }
+  .video-section {
+    padding: 20px;
+    text-align: center;
+}
+video {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+.video-player {
+    width: 100%;
+}
+
+h2 {
+    text-align: center; /* Pour centrer le texte */
+    font-family: Arial, sans-serif; /* Changer la police */
+    font-size: 2.5em;
+    font-weight: bolder;
+    color: #8a0303;
+}

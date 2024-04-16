@@ -1,0 +1,99 @@
+<app-header>
+ 
+
+</app-header>
+<main>
+    
+    <div class="video-section">
+        
+        <button (click)="toggleUploadForm()">Upload Video</button>
+
+<div *ngIf="uploadFormVisible">
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="video" id="video" (change)="handleFileInput($event)">
+    <button type="button" (click)="uploadVideo()">Upload Video</button>
+  </form>
+</div>
+
+<div class="company-info">
+  <h2>Warehouse Cut</h2>
+  <video controls id="uploadedVideo" #videoPlayer>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+        
+    </div>
+ 
+
+ <!-- <button *ngIf="isAdmin"  (click)="toggleFormulaire()">Add product</button>-->
+ 
+
+  <button   (click)="toggleFormulaire()">Add team</button>
+
+   
+
+
+
+  <form *ngIf="afficherFormulaire" (submit)="ajouterMembre()">
+    <label for="nom">Name:</label>
+    <input type="text" id="nom" name="nom" [(ngModel)]="nouveauMembre.nom" required>
+    
+    <label for="role">Role:</label>
+    <input type="text" id="role" name="role" [(ngModel)]="nouveauMembre.role" required>
+     
+    <label for="email">Email:</label>
+    <input type="text" id="role" name="email" [(ngModel)]="nouveauMembre.email" required>
+    
+
+    <label for="photo">Photo:</label>
+    <input type="file" id="photo" name="photo" (change)="handlePhotoUpload($event)"  multiple required>
+    
+    <button type="submit">{{ modifierIndex !== null ? 'Modifier' : 'Ajouter' }}</button>
+  </form>
+
+  <!-- Afficher la photo du nouveau membre dès qu'elle est sélectionnée -->
+  <div *ngIf="nouveauMembre.photo">
+    <h2>Nouveau Membre</h2>
+    <div class="membre-card">
+      <div class="membre-info">
+        <strong>{{ nouveauMembre.nom }}</strong> - {{ nouveauMembre.role }}
+      </div>
+      <img [src]="nouveauMembre.photo" alt="Photo du nouveau membre">
+    </div>
+  </div>
+
+
+
+
+
+
+
+  
+  <div *ngIf="membres.length > 0">
+    <h2>FirstSew Team</h2>
+    <div class="membres-container">
+      <div class="membre-card" *ngFor="let membre of membres; let i = index">
+        <div class="membre-info">
+          <div>
+            <img *ngIf="membre.photo" [src]="membre.photo" alt="Photo du membre"> <!-- Afficher la photo du membre -->
+          </div>
+          <div>
+            <strong>{{ membre.nom }}</strong> <!-- Afficher le nom du membre -->
+          </div>
+          <div>
+            {{ membre.role }} <!-- Afficher la description du membre -->
+          </div>
+        </div>
+        <div class="membre-actions">
+            <button (click)="modifierMembre(i)"><i class="fas fa-edit"></i></button>
+            <button (click)="supprimerMembre(i)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</main>
+<app-footer></app-footer>

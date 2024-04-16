@@ -1,0 +1,32 @@
+
+<app-header></app-header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<!-- Afficher la photo du nouveau membre dès qu'elle est sélectionnée -->
+<div *ngIf="nouveauSpi.photo">
+  <h2>Nouveau test</h2>
+  <div class="test-card">
+    <div class="test-info">
+      <strong>{{ nouveauSpi.nom }}</strong> - {{ nouveauSpi.role }}
+    </div>
+    <img [src]="nouveauSpi.photo" alt="Photo du nouveau spi">
+  </div>
+</div>
+
+<div *ngIf="spis.length > 0">
+    <h2>List Spi</h2>
+    <div class="spis-container">
+      <div class="spi-card" *ngFor="let spi of spis; let i = index">
+        <div class="spi-info">
+          <strong>{{ spi.nom }}</strong> - {{ spi.role }}
+        </div>
+        <!-- Afficher la photo de chaque embre existant -->
+        <img *ngIf="spi.photo" [src]="spi.photo" alt="Photo du spi">
+        <div class="spi-actions">
+       
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

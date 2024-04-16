@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-image: url('assets/img/logo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.203);
+      padding: 330px;
+      max-width: 100px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+ 
+
+    .custom-text {
+      margin-top: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      margin-right: 10px;
+    }
+
+    .input-group input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #9aa4af;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+
+
+
+/* Titre principal */
+h2 {
+  color: #bd4242;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 290px;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 80px;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+header a {
+  color: #bd4242;
+  font-size: 30px; /* Ajustez la taille de la flèche selon vos besoins */
+  margin-right: 20px;
+  margin-left: -680px; /* Ajoutez cette ligne pour définir la marge à gauche */
+  margin-top: -550px; /* Ajoutez cette ligne pour définir la marge en haut */
+  text-decoration: none; /* Supprimez le soulignement par défaut */
+}
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <a href="home"><i class="fas fa-arrow-left"></i></a>
+    </header>
+    
+
+    <form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+      <div class="input-group">
+        <label for="password"><i class="fas fa-lock"></i></label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Password">
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div class="form-photo">
+      <!-- Place for additional form content or photos -->
+    </div>
+  </div>
+</body>
+</html>

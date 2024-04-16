@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin-left: auto;
+  margin-right:600px;
+}
+
+.explorer {
+  display: flex;
+  flex-direction: column; /* Les cartes seront empilées verticalement */
+  align-items: center;
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.folder {
+  width: 131px;
+  height: 132px;
+  background-color: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px; /* Espacement entre les dossiers */
+  transition: transform 0.3s ease; /* Applique l'animation à la propriété de transformation */
+}
+
+/* Applique l'animation lors du survol du dossier */
+.folder:hover {
+  transform: scale(1.1); /* Augmente la taille du dossier */
+}
+
+.folder-top {
+  width: 0%;
+  height: 50%;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+}
+
+.folder-bottom {
+  width: 100%;
+  height: 50%;
+  background-color: #7e7b7b;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.folder-label {
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+/* Ajoutez un margin-right sauf pour le dernier dossier de chaque ligne */
+.folder:not(:nth-child(5n)) {
+  margin-right: 20px;
+}
+#search {
+  margin-bottom: 100px;
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  margin-top: -480px;
+  margin-left:100px;
+}
+.expanded {
+  font-size: 1.2em; /* Exemple d'agrandissement de la taille de la police */
+}
+
+
+#search:focus {
+  outline: none;
+  border-color: #6cb2eb;
+  background-color: #fff;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Ajustez le padding selon vos préférences */
+  background-color: #fff; /* Couleur de fond du header */
+
+  
+}
+
+.logo {
+  width: 100px; /* Ajustez la largeur du logo selon vos préférences */
+  height: auto; /* Hauteur automatique pour conserver les proportions */
+  margin-right: 20px; /* Marge à droite pour séparer le logo du texte */
+}
+h2 {
+color: #bd4242;
+font-weight: bold; /* Écriture en gras */
+text-align: center; /* Centrer horizontalement */
+margin-left: 500px;
+
+
+}
+.btn{
+  margin-top: -582px;
+  margin-left: 20px;
+}

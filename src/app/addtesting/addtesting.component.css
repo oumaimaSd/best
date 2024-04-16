@@ -1,0 +1,146 @@
+main {
+  padding: 0px;
+}
+/* ajout-embre.component.css */
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+}
+
+
+ 
+
+
+.card-body {
+  padding: 20px;
+}
+
+/* sails.component.css */
+img {
+
+
+  max-width: 100%; /* Limite la largeur de l'image à 100% de son conteneur */
+  max-height: 15000px; /* Limite la hauteur de l'image à 300 pixels */
+  /* Ajoutez d'autres styles si nécessaire */
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.card-title {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  color: #666;
+}
+/* ajout-embre.component.css */
+.embres-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* Changer la taille en fonction de la largeur de l'écran */
+  gap: 20px; /* Espacement entre les cartes de embre */
+  margin-bottom: 100px;
+}
+
+.embre-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.embre-info {
+  margin-bottom: 19px;
+}
+
+.embre-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  padding: 0px;
+}
+/* .video-section {
+  padding: 20px;
+  text-align: center;
+}
+video {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+.video-player {
+  width: 100%;
+} */
+.video-section {
+padding: 20px;
+text-align: center;
+}
+
+
+
+
+video {
+width: 80%; /* Largeur de la vidéo */
+display: block;
+margin: 0 auto; /* Centrage horizontal */
+border-radius: 10px; /* Bordures arrondies */
+}
+
+/* Style des contrôles de la vidéo */
+
+video::-webkit-media-controls-play-button {
+color: #fff; /* Couleur de l'icône de lecture */
+}
+
+video::-webkit-media-controls-volume-slider {
+background-color: transparent; /* Fond transparent pour le curseur de volume */
+}
+
+video::-webkit-media-controls-seek-back-button,
+video::-webkit-media-controls-seek-forward-button {
+color: #fff; /* Couleur des icônes de retour/arrière */
+}
+
+video::-webkit-media-controls-timeline {
+background-color: transparent; /* Fond transparent pour la barre de progression */
+}
+
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+color: #fff; /* Couleur du texte de la durée */
+}
+
+h3 {
+  text-align: center; /* Pour centrer le texte */
+  font-family: Arial, sans-serif; /* Changer la police */
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #8a0303;
+}
+
+
+
+h2 {
+  text-align: center; /* Pour centrer le texte */
+  font-family: Arial, sans-serif; /* Changer la police */
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #8a0303;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajouter une ombre de texte */
+  padding: 10px; /* Ajouter un espacement intérieur */
+  background-color: #eee; /* Ajouter une couleur d'arrière-plan */
+  border-radius: 10px; /* Ajouter des coins arrondis */
+}
+

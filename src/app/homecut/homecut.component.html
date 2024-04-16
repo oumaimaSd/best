@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<div>
+  <h2>Liste des dossiers</h2>
+  <ul>
+    <li *ngFor="let dossier of dossiers">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ dossier.nom }}</h5>
+          <button (click)="supprimerDossier(dossier)" class="btn btn-danger">Supprimer</button>
+          <button (click)="editerDossier(dossier)" class="btn btn-primary">Renommer</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <h2>Ajouter un dossier</h2>
+  <div class="card">
+    <div class="card-body">
+      <input type="text" [(ngModel)]="nouveauDossier.nom" class="form-control" placeholder="Nom du dossier">
+      <button (click)="ajouterDossier()" class="btn btn-success">Ajouter</button>
+    </div>
+  </div>
+</div>

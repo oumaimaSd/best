@@ -1,0 +1,79 @@
+header {
+    background-color: #eee;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+.connexion-btn {
+    color: #111; /* Couleur du texte */
+    border: none; /* Supprimer les bordures */
+    padding: 10px 20px; /* Ajouter un espace intérieur */
+    border-radius: 5px; /* Arrondir les coins */
+    cursor: pointer; /* Curseur de type pointer */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s; /* Animation de transition */
+margin-left: 100px;  
+}
+  
+  /* Au survol */
+  .connexion-btn:hover {
+    background-color: #0057b30b; /* Couleur de fond au survol */
+  }
+  
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav a.current {
+    text-decoration: underline; /* Souligner le lien */
+    font-weight: bold; /* Mettre en gras le texte */
+    color: #111; /* Couleur du texte pour indiquer l'élément actif */
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+  
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.connexion-btn{
+    margin-left: 50px;
+}

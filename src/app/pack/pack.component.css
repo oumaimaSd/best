@@ -1,0 +1,68 @@
+
+.media-container {
+  display: flex; /* Utiliser Flexbox pour disposer les éléments horizontalement */
+  flex-wrap: wrap; /* Permettre le passage à la ligne si nécessaire */
+  justify-content: flex-start; /* Aligner les éléments sur le début (à gauche) */
+}
+
+.media-item {
+  flex: 0 0 auto; /* Ne pas faire varier la taille des éléments */
+  margin-right: 10px; /* Espacement entre les éléments */
+}
+
+.video-media video,
+.image-media img {
+  max-width: 320px; /* Définir la largeur maximale des vidéos et des images */
+  height: auto;
+  display: block; /* Pour que les vidéos et les images ne débordent pas du conteneur */
+}
+
+.description {
+  margin-top: 5px;
+}
+.add-media-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container input[type="text"] {
+  flex: 1;
+  margin-right: 10px; /* Espace entre l'entrée de texte et le bouton */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-left:-100px;
+}
+
+/* Titre principal */
+
+h3 {
+  color: #ae1818;}
+.media-content {
+  width: 320px; /* ou la largeur souhaitée */
+  height: 240px; /* ou la hauteur souhaitée */
+}
+
+/* Logo */
+
+.custom-select {
+  width: 200px; /* Définissez la largeur du sélecteur personnalisé */
+  margin-right: 10px; /* Ajoutez un espace à droite */
+}
+
+.filter-button-container {
+  display: inline-block; 
+}
+.translate-button {
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  
+}

@@ -1,0 +1,71 @@
+<app-header>
+ 
+
+</app-header>
+<main>
+  
+  <div class="video-section">
+      
+    <button   class ="custom-button" (click)="toggleUploadForm()">Upload Video</button>
+  
+  <div *ngIf="uploadFormVisible">
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="video" id="video" (change)="handleFileInput($event)">
+      <button type="button" (click)="uploadVideo()">Upload Video</button>
+    </form>
+  </div>
+  
+  <div class="company-info">
+    <h2>Warehouse Cut</h2>
+    <video controls id="uploadedVideo" #videoPlayer>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+          
+      </div>
+   
+
+ <!-- <button *ngIf="isAdmin"  (click)="toggleFormulaire()">Add product</button>-->
+ 
+
+
+   
+
+
+
+  
+
+
+
+
+
+
+
+ 
+    <div *ngIf="teamwares.length > 0">
+      <h2>Warehouse Team</h2>
+      <div class="teamwares-container">
+        <div class="teamware-card" *ngFor="let teamware of teamwares; let i = index">
+          <div class="teamware-info">
+            <div>
+              <img *ngIf="teamware.photo" [src]="teamware.photo" alt="Photo du teamware"> <!-- Afficher la photo du membre -->
+            </div>
+            <div>
+              <strong>{{ teamware.nom }}</strong> <!-- Afficher le nom du membre -->
+            </div>
+            <div>
+              {{ teamware.role }} <!-- Afficher la description du membre -->
+            </div>
+            <div>
+              {{ teamware.email }} <!-- Afficher la description du membre -->
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    
+  
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,145 @@
+/* Réinitialisation des marges et des rembourrages par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Police et marges par défaut pour le corps */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-left: 120px;
+}
+
+/* Enveloppe des cartes */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Carte individuelle */
+.card {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.card-container .row .col-md-4:last-child .card {
+  margin-right: 0;
+}
+
+/* En-tête */
+header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; /* Réajustement du padding */
+  background-color: #fff;
+  margin-left:-100px;
+}
+
+/* Titre principal */
+h2 {
+  color: #bd4242;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 500px;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 80px;
+}
+
+/* Champ de recherche */
+.search-wrapper {
+  position: relative;
+  margin-left: 400px;
+  margin-bottom: 20px;
+}
+
+.search-wrapper input[type="text"] {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-wrapper .fa-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form div {
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+.form-container input[type="file"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff000085;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #660606;
+}
+.full-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-screen-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+}

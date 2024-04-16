@@ -1,0 +1,52 @@
+<header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <img src="assets/img/logos.png" alt="Logo" class="logo">
+  <h2 class="custom-text">SOCIETE TUNISIENNE D'EEQUIPEMENT DE BATEAUX</h2>
+</header>
+
+  <div class="ajout">
+    <button (click)="toggleForm()">+ </button>
+    <div *ngIf="showForm" class="form-container">
+      <form (ngSubmit)="onSubmit()">
+        <div>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        </div>
+        <div>
+          <label>Description:</label>
+          <textarea [(ngModel)]="description" name="description"></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="search">
+<div class="search-wrapper">
+  <input type="text" [(ngModel)]="searchText" (input)="filterImages()" placeholder="Rechercher..." />
+</div>
+
+  <body>
+
+    <div class="card-container">
+      <div class="col-md-4" *ngFor="let image of images">
+        <div class="card" *ngIf="!searchText || image.description.toLowerCase().includes(searchText.toLowerCase())">
+          <img [src]="image.url" alt="Image" (click)="openFullScreenImage(image.url)">
+          <div class="card-body">
+            <p class="card-text">{{ image.description }}</p>
+    
+            <button (click)="deleteImage(image.id)" class="delete-icon">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Balise pour afficher l'image en plein écran -->
+    <div class="full-screen-overlay" *ngIf="fullScreenImage" (click)="closeFullScreenImage()">
+      <img [src]="fullScreenImage" alt="Full Screen Image">
+    </div>
+    
+</body>
+

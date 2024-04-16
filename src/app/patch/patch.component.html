@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+        background-image: url('assets/img/fond.jpg');
+        background-size: cover;/* La taille de l'image s'ajustera pour couvrir 100% de la largeur et de la hauteur de la fenêtre */
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 0; /* Assurez-vous qu'il n'y a pas de marges extérieures pour le body */
+        padding: 0; /* Assurez-vous qu'il n'y a pas de rembourrage intérieur pour le body */
+    }
+    
+    .content1 {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.666); /* Couleur de fond avec une opacité pour simuler la transparence */
+        padding: 250px;
+    }
+    
+        .fas, .far, .fal, .fab {
+          color: gray; /* Couleur des icônes en gris */
+        }
+        .slogan {
+          text-align: center;
+          font-size: 15px;
+          margin-top: 20px;
+          color: #ae1818; /* Couleur du texte */
+          font-style: italic;
+          margin-top: 40px;
+        }
+    
+    
+        h2 {
+      color: #ae1818;
+      font-weight: bold;
+      text-align: center;
+      margin-top: -270px;
+      margin-left: 180px;
+    }
+    .logout-button {
+      position: absolute;
+      top: 10px; /* Ajustez la valeur en fonction de votre mise en page */
+      right: 10px; /* Ajustez la valeur en fonction de votre mise en page */
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .logout-button i {
+      color: gray; /* Couleur de l'icône en gris */
+      position: fixed;
+    
+    }
+    
+    
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-right: 10px;
+      margin-left: -112px;
+        margin-top: -408px;
+    }
+    
+      </style>
+</head>
+<body>
+
+
+    <div class="content1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-c1K5Cm4OUq1rxwkeEY3DvGS2YiZuW7RmydWsAjeL/iJV7yFT6JdxB+cDTIwih4Uy+4/CxmJMj5i+76Pdbrj/eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<header>
+  
+    <img src="assets/img/logo1.jpg" alt="Logo" class="logo">
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> 
+    </button>
+    <h2>{{ companyName }}</h2>
+   
+
+</header>
+<button class="translate-button" (click)="translateToEnglish()"> <i class="fas fa-language"></i></button>
+
+
+<h1 class="slogan">{{ slogan }}</h1>
+
+<div class="container custom-background"> 
+ 
+
+  <div>
+    <button (click)="toggleCreatedosInput()" ><i class="fas fa-folder-plus"></i></button>
+    <div *ngIf="showdosInput">
+      <input type="text" placeholder="Nom du dossier" [(ngModel)]="newdosName">
+      <button (click)="createdos(); toggleCreatedosInput()"> {{nomboutton}}</button>
+    </div>
+  </div>
+  
+  <div class="mt-3 filter-container">
+    <input type="text" [placeholder]="placeholderdosName" [(ngModel)]="searchdosName" class="form-control">
+    <button  (click)="filterBydosName()">{{nomboutton2}}</button>
+  </div>
+  
+  <div *ngFor="let dos of filtereddoss"  class="card mt-3">
+    <div  class="card-header bg-light d-flex justify-content-between align-items-center">
+      <h3 (click)="toggledos(dos)" class="m-0">
+        <i class="fas fa-dos"></i> {{ dos.name }}
+      </h3>
+      <div>
+        <button (click)="editdos(dos)"><i class="fas fa-edit"></i></button>
+        <button (click)="deletedos(dos)"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    
+    
+   
+      
+    
+    <div *ngIf="dos.showContent" class="card-body">
+        <div class="row">
+            <div class="col">
+              <div class="mt-3">
+                <input type="text" [placeholder]="placeholderDescription" [(ngModel)]="searchDescription">
+                <button (click)="filterByDescription(dos)">{{nomboutton2}}</button>
+              </div>
+            </div>
+            <div class="col">
+                <div class="mt-3">
+                    <div class="row">
+                      <div class="col">
+                        <select class="form-control" [(ngModel)]="searchType">
+                          <option value="">{{ allTypesOption }}</option>
+                          <option value="image">Image</option>
+                          <option value="video">Vidéo</option>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <button (click)="filterByType(dos, searchType === 'image' ? 'image' : 'video')">{{nomboutton2}}</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+          </div>
+          
+          <div class="media-container mt-3">
+            <div *ngFor="let media of dos.media | paginate: { itemsPerPage: 8 , currentPage: currentPage }" class="media-item mb-3">
+              <div *ngIf="media.type === 'video'" class="video-media">
+                <video width="520" height="740" controls>
+                  <source [src]="media.url" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div *ngIf="media.type === 'image'" class="image-media">
+                <img [src]="media.url" alt="{{ media.name }}">
+              </div>
+              <div class="description mt-2">
+                <p>{{ media.description }}</p>
+              </div>
+              <button  (click)="deleteMedia(dos, media)"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+          <div class="mt-3">
+            <pagination-controls (pageChange)="onMediaPageChange($event)" class="mt-3"></pagination-controls>
+          </div>
+          
+          
+          
+          <div class="d-flex justify-content-end mt-1" > 
+            <button (click)="toggleAddMediaForm()"><i class="fas fa-plus"></i></button>
+          </div>
+          <div *ngIf="showAddMediaForm" class="mt-3">
+            <input type="file" #fileInput>
+            <input type="text" placeholder="Description" #descriptionInput>
+            <button  (click)="addMedia(fileInput, descriptionInput, dos)">{{nomboutton3}}</button>
+          </div>
+          
+    </div>
+  </div>
+  <div class="pagination-container">
+    <pagination-controls (pageChange)="onPageChange($event)" class="mt-3"></pagination-controls>
+  </div>
+  
+</div></div>
+</body>
+</html>

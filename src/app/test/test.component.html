@@ -1,0 +1,16 @@
+<input type="text" [(ngModel)]="recherche" placeholder="Rechercher..." class="search">
+<button class="search1" (click)="filtrer()">Filtrer</button>
+
+
+
+<div class="gallery clearfix">
+  <div class="card" *ngFor="let photo of textesFiltres" (click)="openFullScreen(photo.url)">
+    <img [src]="photo.url" [alt]="photo.title"> 
+    <div class="card-content"> 
+      <button *ngIf="!estSupprimee(photo)" class="delete-icon" (click)="demanderConfirmation(photo)">
+        Supprimer
+      </button> 
+      <p>{{ photo.description }}</p> 
+    </div>
+  </div>
+</div>

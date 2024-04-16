@@ -1,0 +1,46 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<button   (click)="toggleFormulaire()">Add Cover</button>
+
+<form *ngIf="afficherFormulaire" (submit)="ajouterMembre()">
+  <label for="nom">Name:</label>
+  <input type="text" id="nom" name="nom" [(ngModel)]="nouveauEmbre.nom" required>
+  
+  <label for="role">Description:</label>
+  <input type="text" id="role" name="role" [(ngModel)]="nouveauEmbre.role" required>
+  
+  <label for="photo">Photo:</label>
+  <input type="file" id="photo" name="photo" (change)="handlePhotoUpload($event)"  multiple required>
+  
+  <button type="submit">{{ modifierIndex !== null ? 'Modifier' : 'Add' }}</button>
+</form>
+
+<!-- Afficher la photo du nouveau membre dès qu'elle est sélectionnée -->
+<div *ngIf="nouveauEmbre.photo">
+  <h2>Nouveau test</h2>
+  <div class="test-card">
+    <div class="test-info">
+      <strong>{{ nouveauEmbre.nom }}</strong> - {{ nouveauEmbre.role }}
+    </div>
+    <img [src]="nouveauEmbre.photo" alt="Photo du nouveau embre">
+  </div>
+</div>
+
+<div *ngIf="embres.length > 0">
+    <h2>List Covers</h2>
+    <div class="embres-container">
+      <div class="embre-card" *ngFor="let embre of embres; let i = index">
+        <div class="embre-info">
+          <strong>{{ embre.nom }}</strong> - {{ embre.role }}
+        </div>
+        <!-- Afficher la photo de chaque embre existant -->
+        <img *ngIf="embre.photo" [src]="embre.photo" alt="Photo du embre">
+        <div class="embre-actions">
+         <button   (click)="modifierMembre(i)"><i class="fas fa-edit"></i></button>
+         <button   (click)="supprimerMembre(i)"><i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
